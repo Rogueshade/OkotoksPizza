@@ -2,8 +2,9 @@ body{
     background-color: lightblue;
     font-style: normal;
   }
-  
-  h1:hover {
+ 
+  . h1:hover{
+    border width: 5px;
     color: royalblue;
     text-align: center;
     font-size: larger;
@@ -16,7 +17,7 @@ body{
     font-style: roman;
  }      
 
-a:link{ color: red:}   
-a:visited{ color:silver;}
+a:link{ color: red;}   
+a:visited{ color:goldenrod;}
 a:hover{ background-color:purple;}
 a:active{ background-color: tomato;}
