@@ -1,0 +1,32 @@
+@import '_colors.scss';
+@import '_mixins.scss';
+
+
+$font-family: Arial, sans-serif;
+$font-size: small;
+body {
+    font-style: $font-family;
+}
+section {
+    display: grid;
+}
+h1 {
+    color:$color-accent;
+}
+h2 {
+    color:$color-accent;
+}
+p {
+    $font-size:small;
+}
+footer {
+    &:active {
+        color:$color-active;
+    }
+    &:visited {
+        color:$color-visited;
+    } 
+    &:hover {
+        color:$color-hover;
+    }
+}

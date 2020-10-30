@@ -1,0 +1,4 @@
+@mixin fancy-borders($color-accent) {
+    border:$medium;
+    box-shadow: 5px 5px 7px darkslategrey;
+}

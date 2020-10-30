@@ -1,73 +1,128 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+body {
+  font-style: Arial, sans-serif;
 }
+
+section {
+  display: -ms-grid;
+  display: grid;
+}
+
+h1 {
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+
+footer:active {
+  color: gold;
+}
+
+footer:visited {
+  color: slateblue;
+}
+
+footer:hover {
+  color: aquamarine;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 header,
 main,
 footer {
-    padding: 0.5rem;
+  padding: 0.5rem;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: top-center;
 }
-header {
-    background-color: darkred;
-    text-align: center; 
-    font-size: large; 
-    font-family: Arial, Helvetica, sans-serif;   
+
+body header {
+  background-color: darkred;
 }
-.logo {
-    width:100px ;
-    height: 100px;
+
+body .logo {
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+
+body .banner {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: silver;
+}
+
+body .video {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+body main {
+  background-color: silver;
+  font-size: small;
+}
+
+body footer {
+  background-color: #267911;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+body .grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 75px 2fr 25px;
+      grid-template-rows: 75px 2fr 25px;
+  min-height: 100vh;
+}
+
+body .photo {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 750px) {
+  body .logo {
+    max-width: 50%;
     float: left;
+    margin-right: 1.5rem;
+  }
 }
-.banner {
-    width: fit-content;
-    height:fit-content;
-    color: silver;
-    text-align: top-center;
-}
-.video{
-    width: fit-content;
-    height: fit-content;
-}
-main {    
-    background-color: rgb(219, 223, 219);
-    font-size: small;
-} 
-footer {   
-    background-color: rgb(38, 121, 17);
-    width: fit-content;
-    height: fit-content;
-}
-.grid-container {
-    display: grid;
-    grid-template-rows: 75px 2fr 25px;
-    min-height: 100vh;
-}
-.photo {
-    max-width:100% ;
-}
-@media only screen and (min-width:750px) {
-    .logo {
-        max-width: 50%;
-        float: left;
-        margin-right: 1.5rem;
-    }
-}
-@media only screen and (min-width:969px) {
-    .grid-container {
-        grid-template-rows:120px 2fr 30px;
-    }
-    header button {
-        display: none;
-    }
 
+@media only screen and (min-width: 969px) {
+  body .grid-container {
+    -ms-grid-rows: 120px 2fr 30px;
+        grid-template-rows: 120px 2fr 30px;
+  }
+  body header button {
+    display: none;
+  }
 }
+
 @media print {
-    body {
-        font-size: 3rem;
-    }
-
+  body body {
+    font-size: 3rem;
+  }
 }
-
-
+/*# sourceMappingURL=style.css.map */
