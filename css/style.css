@@ -1,33 +1,4 @@
 @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-body {
-  font-style: Arial, sans-serif;
-}
-
-section {
-  display: -ms-grid;
-  display: grid;
-}
-
-h1 {
-  color: black;
-}
-
-h2 {
-  color: black;
-}
-
-footer:active {
-  color: gold;
-}
-
-footer:visited {
-  color: slateblue;
-}
-
-footer:hover {
-  color: aquamarine;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -35,93 +6,152 @@ footer:hover {
   padding: 0;
 }
 
-header,
-main,
-footer {
-  padding: 0.5rem;
+#grid-container {
+  display: -ms-grid;
+  display: grid;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: top-center;
+a {
+  color: darkred;
 }
 
-body header {
+#header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 5fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 5fr 1fr 1fr 1fr;
+  min-height: 10vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: darkred;
+  -webkit-box-shadow: 1px 1px 3px 0;
+          box-shadow: 1px 1px 3px 0;
+  z-index: 3;
 }
 
-body .logo {
-  width: 75px;
-  height: 75px;
-  float: left;
+#header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #267911;
+  overflow: visible;
 }
 
-body .banner {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.banner {
+  font-size: xx-large;
   color: silver;
 }
 
-body .video {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+div > iframe {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
-body main {
-  background-color: silver;
-  font-size: small;
+#header ul a {
+  display: block;
+  padding: 15px;
+  border-right: royalblue;
 }
 
-body footer {
-  background-color: #267911;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-body .grid-container {
+#content {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 75px 2fr 25px;
-      grid-template-rows: 75px 2fr 25px;
-  min-height: 100vh;
+  background-color: silver;
+  min-height: 85vh;
 }
 
-body .photo {
-  max-width: 100%;
+#footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  min-height: 10vh;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #267911;
+}
+
+.video {
+  width: 500px;
+  height: 300px;
+}
+
+.grid-container {
+  display: -moz-inline-grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10 1fr);
+  -ms-grid-rows: 25% 100px 50%;
+      grid-template-rows: 25% 100px 50%;
+      grid-template-areas: "header" "body" "footer";
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #00ff6a;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: large;
+  text-align: center;
+}
+
+.grid-item .background {
+  background-image: url("images/stone oven.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.grid-item .photo {
+  max-height: 750px;
+  max-width: 750px;
+}
+
+.photo {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 1.5rem;
+  display: block;
 }
 
 @media only screen and (min-width: 750px) {
-  body .logo {
-    max-width: 50%;
-    float: left;
-    margin-right: 1.5rem;
+  .grid-container {
+    -ms-grid-rows: 120px 2fr 30px;
+        grid-template-rows: 120px 2fr 30px;
   }
 }
 
 @media only screen and (min-width: 969px) {
-  body .grid-container {
+  .grid-container {
     -ms-grid-rows: 120px 2fr 30px;
         grid-template-rows: 120px 2fr 30px;
   }
-  body header button {
+  header button {
     display: none;
   }
 }
 
 @media print {
-  body body {
+  body {
     font-size: 3rem;
   }
 }
