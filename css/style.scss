@@ -28,18 +28,31 @@ a{
     margin:0 ;
     padding: 0;
     list-style: none;
-    background-color: $color-3;
-    overflow: visible;
+    background-color: $color-4;
     
+    #header li{
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color:$color-4 ;
+
+
+    }
+    .menu li:hover{
+        background-color: $color-hover;
+
+    }
+
 }
+
 .banner {
     font-size: xx-large;
     color:$color-2;
 
 }
-#menu {
+ 
     
-}
+
+
 div > iframe {
     width: max-content;
     height: max-content;
@@ -76,9 +89,7 @@ div > iframe {
     grid-template-columns: repeat(10 1fr);
     grid-template-rows: 25% 100px 50%;
     grid-template-areas:
-    "header"
-    "body"
-    "footer";
+    'header' 'content' 'footer'
     padding: 10px;
     
 }
@@ -93,6 +104,8 @@ div > iframe {
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+        opacity: 0.3 ;
+
     }
      .photo {
         max-height: 750px;
