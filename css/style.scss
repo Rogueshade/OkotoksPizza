@@ -1,6 +1,6 @@
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); 
-@import '_colors.scss';
-@import '_mixins.scss';
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "_colors.scss";
+@import "_mixins.scss";
 
 * {
     box-sizing: border-box;
@@ -9,114 +9,97 @@
 }
 #grid-container {
     display: grid;
-
-}
-a{
-    color:$color-1;
+    grid-template-columns: minmax(100px, 300px) minmax(400px, 3fr) minmax(200px, 1fr);
+    grid-gap: 0.5rem;
+    grid-template-areas:
+        "header header header"
+        "lsidebar content rsidebar"
+        "footer footer footer";
 }
 #header {
-    display: grid;
-    grid-template-columns: 2fr 5fr 1fr 1fr 1fr;
-    min-height: 10vh;
-    justify-content: center;
-    align-items: center;
+    display: inline-grid;
+    grid-area: header;
+    grid-template-columns:repeat(1fr ,1fr);
+    min-height: 75%;
+    width: fit-content;
+    justify-content: right;
+    align-items: right;
     background-color: $color-1;
     box-shadow: 1px 1px 3px 0;
     z-index: 3;
 }
-#header ul{
-    margin:0 ;
+#header ul {
+    margin: 0;
     padding: 0;
     list-style: none;
-    background-color: $color-4;
-    
-    #header li{
+    background-color: $color-3;
+    justify-items: right;
+
+    #header li {
         padding: 8px;
         margin-bottom: 7px;
-        background-color:$color-4 ;
-
-
+        background-color: $color-3;
     }
-    .menu li:hover{
+    .menu li:hover {
         background-color: $color-hover;
-
     }
-
 }
-
 .banner {
     font-size: xx-large;
-    color:$color-2;
-
+    color: $color-2;
+    text-align: right;
 }
- 
-    
-
-
 div > iframe {
     width: max-content;
     height: max-content;
 }
-#header ul a{
+#header ul a {
     display: block;
     padding: 15px;
     border-right: royalblue;
-
-
+    width: f;
 }
 #content {
+    grid-area: content;
     display: grid;
     background-color: $color-2;
-    min-height: 85vh;
+    min-height: fit-content;
+    width: fit-content;
+}
+.grid {
+    display: grid;
+}
+.left {
+    grid-template-columns: repeat(1fr, 1fr);
+    background-color: $color-2;
+    min-width: 100vh;
+    width: 100%;
+}
+.right {
+    grid-template-columns: repeat(1fr, 1fr);
+    float: right;
+    margin: 5rem;
+    padding: 5px;
+    .image {
+        min-width: 100vh;
+        min-height: 100%;
+    }
 }
 #footer {
     display: grid;
+    grid-area: footer;
     grid-template-columns: repeat(3, 1fr);
-    min-height:10vh;
+    min-height: 10vh;
     justify-items: center;
     align-items: center;
     background-color: $color-3;
-}.video{
+    .script {
+        align-items: center;
+    }
+}
+.video {
     width: 500px;
     height: 300px;
-
-}
-
-
-
-.grid-container  {
-    display: -moz-inline-grid;
-    grid-template-columns: repeat(10 1fr);
-    grid-template-rows: 25% 100px 50%;
-    grid-template-areas:
-    'header' 'content' 'footer'
-    padding: 10px;
-    
-}
-.grid-item {
-    background-color:$color-4;
-    border: 2px solid rgba(0,0,0,0.8);
-    padding: 20px;
-    font-size: large;
-    text-align: center;
-    .background {
-        background-image: url('images/stone oven.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        opacity: 0.3 ;
-
-    }
-     .photo {
-        max-height: 750px;
-        max-width: 750px;
-    }
-    
-}
-
-.photo {
-    height: fit-content;
-    width: fit-content;
 }
 .logo {
     width: 100px;
@@ -125,26 +108,142 @@ div > iframe {
     margin-right: 1.5rem;
     display: block;
 }
-@media only screen and (min-width:750px) {
-    .grid-container {
-        grid-template-rows:120px 2fr 30px;
-    }
-   
+
+.main {
+    width: 25%;
+    float: left;
 }
-@media only screen and (min-width:969px) {
-    .grid-container {
-        grid-template-rows:120px 2fr 30px;
-    }
-    header button {
-        display: none;
+.memu {
+    width: 75%;
+    float: left;
+}
+
+#googleMap {
+    grid-area: rsidebar;
+    width: fit-content;
+    float: right;
+}
+[class*='col-'] {
+    float: left;
+    padding: 15px;
+    .row {
+        margin: 0vw;
+        padding: 0vw;
+
+        .col-1 {
+            width: 8.33%;
+        }
+        .col-2 {
+            width: 16.66%;
+        }
+        .col-3 {
+            width: 50%;
+            align-items: center;
+            .inner {
+                display: inline;
+            }
+            .single-menu-item {
+                text-align: inherit;
+            }
+
+            .description {
+                font-size: inherit;
+                text-align: center;
+            }
+        }
+        .price {
+            font-weight: bolder;
+        }
+        .col-4 {
+            width: 33.33%;
+        }
+        .col-5 {
+            width: 41.66%;
+        }
+        .col-6 {
+            width: 50%;
+        }
+        .col-7 {
+            width: 58.33%;
+        }
+        .col-8 {
+            width: 66.66%;
+        }
+        .col-9 {
+            width: 50%;
+            .image-wrap {
+                width: 100%;
+                height: 50%;
+                float: right;
+            }
+        }
     }
 
-}
-@media print {
-    body {
-        font-size: 3rem;
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
     }
 
-}
-    
+    html {
+        font-family: $font-heading;
+    }
+    .menu {
+        float: left;
+        width: 20%;
+        text-align: center;
+    }
+    .menu a {
+        background-color: #e5e5e5;
+        padding: 8px;
+        margin-top: 7px;
+        display: block;
+        width: 100%;
+        color: black;
+    }
+    .left {
+        float: left;
+        width: 60%;
+        padding: 0 20px;
+    }
+    .right {
+        background-color: $font-color;
+        float: left;
+        width: 20%;
+        padding: 15px;
+        margin-top: 7px;
+        text-align: center;
+    }
+    .header {
+        background-color: $color-1;
+        color: #ffffff;
+        padding: 15px;
+    }
+    .row {
+        display: inline;
+        text-align: justify;
+        font-style: $font-style;
+    }
 
+    .menu li:hover {
+        background-color: $color-hover;
+    }
+}
+@media only screen and (max-width: 468px) {
+    width:fit-content;
+}
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+        grid-template-rows: 120px 2fr 30px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #grid-container {
+        display: grid;
+    }
+}
